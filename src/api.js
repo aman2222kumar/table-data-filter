@@ -1,10 +1,9 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const fetchData = createAsyncThunk("user/fetchdata", function () {
-  axios
-    .get("https://jsonplaceholder.typicode.com/users")
-    .then((res) => res.data);
+const fetchData = createAsyncThunk("user/fetchData", async () => {
+  const res = await axios("https://jsonplaceholder.typicode.com/users");
+  return res.data;
 });
 
 export default fetchData;

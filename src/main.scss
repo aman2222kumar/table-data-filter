@@ -1,3 +1,52 @@
 body{
     background-color: rgb(27, 15, 15);
+    
+
+}
+.table_container{
+    color: rgb(194, 194, 0);
+  
+    height: 5rem;
+  @include itemCenter(flex,center);
+
+   .spinner{
+    border: 10px  solid red;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-weight: bolder;
+
+   }
+
+   table{
+    border: 5px solid rgb(204, 215, 0);
+    th{
+        border-right: 1px solid rgb(14, 14, 12);
+        background-color: rgb(149, 149, 0);
+        color: black;
+        padding: 1rem;
+       }
+       td{
+        border-right: 1px solid rgb(223, 0, 52);
+        border-bottom: 1px solid rgb(216, 9, 9);
+        padding: 1rem;
+       }
+   }
+   .tableData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   input{
+    width: 50%;
+    padding: 0.7rem;
+    border-radius: 10px;
+   }
+}
+
+@mixin itemCenter($argue,$argue2){
+    display: $argue;
+    justify-content: $argue2;
+    align-items: center;
 }

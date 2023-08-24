@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import fetchData from "./api";
 
-const initialData = {
-  loading: true,
+const initialState = {
+  loading: false,
   data: [],
   error: "",
 };
 
 const fetchReducerBro = createSlice({
   name: "user",
+  initialState: initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state) => {
       state.loading = true;
@@ -26,4 +27,4 @@ const fetchReducerBro = createSlice({
   },
 });
 
-export default fetchReducerBro;
+export default fetchReducerBro.reducer;
